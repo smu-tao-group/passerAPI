@@ -7,3 +7,23 @@ This is the API for [PASSer](https://passer.smu.edu).
 
 If you find this helpful, please cite: Hao Tian *et al* 2021 *Mach. Learn.: Sci. Technol.* **2** 035015
 
+## How to use
+
+1. Python
+
+```python
+import requests
+
+url = 'https://passer.smu.edu/api'
+# fields: pdb, chain, model
+data = {"pdb": "5DKK", "chain": "A"}
+
+results = requests.post(url, data=data)
+print(results.json())
+```
+
+2. Terminal
+
+```bash
+curl -X POST -d pdb=5dkk -d chain=A https://passer.smu.edu/api
+```
